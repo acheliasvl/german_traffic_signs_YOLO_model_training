@@ -1,0 +1,11 @@
+/Train/
+/Test/
+
+/runs/
+yolov8n.pt
+yolov8s.pt
+
+__pycache__/
+*.pyc
+venv/
+.env
