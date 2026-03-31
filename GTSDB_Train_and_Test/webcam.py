@@ -6,7 +6,7 @@ def main():
     # Load the trained model
     # Note: If your training just started, this file might not exist yet!
     # Wait for at least the first epoch to complete before running this.
-    model_path = 'runs/detect/train/weights/best.pt'
+    model_path = 'traffic_sign_model.pt'
     
     if not os.path.exists(model_path):
         print(f"Error: Model weights not found at '{model_path}'.")
@@ -32,7 +32,7 @@ def main():
         if success:
             # Run YOLOv8 inference on the current webcam frame
             # Lowered confidence to 0.25 since the model is still early in training!
-            results = model(frame, conf=0.25, verbose=False)
+            results = model(frame, conf=0.10, verbose=False)
             
             # Plot the bounding boxes and labels on the frame
             annotated_frame = results[0].plot()
